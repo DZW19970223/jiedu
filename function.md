@@ -14,7 +14,7 @@ Thermostat_2019A是实现空调智能化的一个终端节点，主要是接收�
 # 1. 程序执行流程
 应用程序入口是`simple-main.c`文件下的`int MAIN(MAIN_FUNCTION_PARAMETERS)`函数，该函数下只有三句代码，主要是初始化硬件和串口，执行最后的` emberAfMain(MAIN_FUNCTION_ARGUMENTS)`进入主程序。程序来到了`Thermostat_2019A_callbacks.c`文件下的`emberAfMainInitCallback()`函数，在该函数下：
 - `appEventInit()`方法是风机、电表和阀门的初始化。
-- `emberAfFanControlClusterServerAttributeChangedCallback(THERMOSTAT_EP, ZCL_FAN_CONTROL_FAN_MODE_ATTRIBUTE_ID)`和`emberAfThermostatClusterServerAttributeChangedCallback(THERMOSTAT_EP, ZCL_SYSTEM_MODE_ATTRIBUTE_ID)`是在接收到指令时会执行的回调函数。
+- `emberAfFanControlClusterServerAttributeChangedCallback(THERMOSTAT_EP, ZCL_FAN_CONTROL_FAN_MODE_ATTRIBUTE_ID)`和`emberAfThermostatClusterServerAttributeChangedCallback(THERMOSTAT_EP, ZCL_SYSTEM_MODE_ATTRIBUTE_ID)`是在相关簇属性值发生改变时会执行的回调函数。
 - `emberEventControlSetDelayMS(displayBoardEventControl, 3000)`和`emberEventControlSetDelayMS(electricMeterEventControl, 3000)`是延时3秒后执行事件`displayBoardEventControl`和`electricMeterEventControl`。
 # 2. 事件
 应用程序一共自定义了6个自定义事件，每个事件都会对应有一个事件处理函数，它们分别是：
