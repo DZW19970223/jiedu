@@ -1,7 +1,8 @@
-**<font size=6>Thermostat_2019A代码功能解读</font><br/>**
+# Thermostat_2019A代码功能解读 #
 Thermostat_2019A是实现空调智能化的一个终端节点，主要是接收空调遥控器传过来数据，然后根据数据实现相应功能。
 
 ----
+- [Thermostat_2019A代码功能解读](#thermostat2019a%e4%bb%a3%e7%a0%81%e5%8a%9f%e8%83%bd%e8%a7%a3%e8%af%bb)
 - [1. 程序执行流程](#1-%e7%a8%8b%e5%ba%8f%e6%89%a7%e8%a1%8c%e6%b5%81%e7%a8%8b)
 - [2. 事件](#2-%e4%ba%8b%e4%bb%b6)
 - [3. 具体功能](#3-%e5%85%b7%e4%bd%93%e5%8a%9f%e8%83%bd)
