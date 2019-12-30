@@ -1,5 +1,7 @@
-# Thermostat_2019A代码功能解读
+**<font size=6>Thermostat_2019A代码功能解读</font><br/>**
+Thermostat_2019A是实现空调智能化的一个终端节点，主要是接收空调遥控器传过来数据，然后根据数据实现相应功能。
 
+----
 - [1. 程序执行流程](#1-%e7%a8%8b%e5%ba%8f%e6%89%a7%e8%a1%8c%e6%b5%81%e7%a8%8b)
 - [2. 事件](#2-%e4%ba%8b%e4%bb%b6)
 - [3. 具体功能](#3-%e5%85%b7%e4%bd%93%e5%8a%9f%e8%83%bd)
@@ -8,6 +10,7 @@
   - [3.3 显示板数据查询](#33-%e6%98%be%e7%a4%ba%e6%9d%bf%e6%95%b0%e6%8d%ae%e6%9f%a5%e8%af%a2)
   - [3.4 电能计算](#34-%e7%94%b5%e8%83%bd%e8%ae%a1%e7%ae%97)
 
+----
 # 1. 程序执行流程
 应用程序入口是`simple-main.c`文件下的`int MAIN(MAIN_FUNCTION_PARAMETERS)`函数，该函数下只有三句代码，主要是初始化硬件和串口，执行最后的` emberAfMain(MAIN_FUNCTION_ARGUMENTS)`进入主程序。程序来到了`Thermostat_2019A_callbacks.c`文件下的`emberAfMainInitCallback()`函数，在该函数下：
 - `appEventInit()`方法是风机、电表和阀门的初始化。
